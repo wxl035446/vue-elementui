@@ -1,0 +1,400 @@
+/*
+ *
+ * Created with wxl.
+ * Date: 2017/8/3
+ * Time: 11:02
+ *
+ */
+@charset "UTF-8";
+/**
+* @file:      Neat.css
+* @author:    一丝
+* @update:    2016年08月10日22:05:05
+* @copyright: 基于 normalize.css | MIT License
+*/
+/**
+* Neat.css 解决的问题
+* 基于业务需要兼容的浏览器做到以下几点：
+* 1.解决BUG，特别是低级浏览器的常见BUG；
+* 2.统一效果，但不盲目追求重置为0；
+* 3.向后兼容；
+* 4.考虑响应式；
+* 5.考虑移动设备。
+*/
+/* ==========================================================================
+ 有即是无，无即是有
+ ========================================================================== */
+html,body, dl, dd,
+ul, ol,
+h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td {
+  margin: 0;
+  padding: 0;
+  border:0;
+ /* font-size: 15px;*/
+}
+html , body{
+  height: 100%;
+}
+
+/**
+* 非大面积文字排版网站通常不需要列表项，如果需要可单独设置
+*/
+ul, ol {
+  list-style-type: none;
+  list-style-image: none;
+}
+i{
+  font-style: normal;
+}
+/* ==================
+========================================================
+ 链接
+ ========================================================================== */
+/**
+* 1. 去除链接默认的下划线，提高文字可读性
+* 2. 去掉 IE 10+ 点击链接时的灰色背景
+*/
+a {
+  text-decoration: none;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+}
+/**
+* 去掉input 背景黄色
+*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset!important;
+}
+/**
+* 去掉点击时的焦点框，同时保证使用键盘可以显示焦点框
+*/
+a:active,
+a:hover {
+  outline-width: 0;
+}
+/*----------- wxl by 2017 08 09  elementui 重定义--------------*/
+/*---menu  style  css---*/
+
+.el-menu-vertical-demo{
+  background-color:#2c445a!important;
+  height:calc(100% - 52px);
+  padding-top: 52px;
+}
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+}
+.el-submenu .el-menu{
+  background:#2c445a;
+}
+.el-menu ul li a{
+  background:#2c445a;
+}
+.el-menu ul  .el-active a{
+  background:#25292a;
+  border-left:3px solid #ffb820;
+}
+.el-menu .el-menu-item, .el-menu .el-submenu__title{
+  color:#B5B5B5;
+}
+
+.el-menu .el-submenu .el-menu-item{
+  background-color:#2c445a;
+}
+.el-menu .el-submenu .el-submenu__title,.el-menu  .el-menu-item,.el-menu .el-submenu .el-menu-item, .el-menu .el-submenu__title{
+  background-color:#2c445a;
+}
+.el-menu .el-submenu .el-submenu__title:hover,.el-menu  .el-menu-item:hover,.el-menu .el-submenu .el-menu-item:hover, .el-menu .el-submenu__title:hover{
+  background-color: #233342;
+  color:#fff;
+}
+ .el-menu .el-submenu .el-menu-item.is-active, .el-menu .el-menu-item.is-active{
+  background: #578EBE;
+  color:#B5B5B5;
+}
+.el-menu .el-menu-item-group__title{
+  padding-top:0px;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner{
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner:after{
+  border-color: #fff;
+}
+/*弹出框信息提示*/
+.el-message{
+  top:40%;
+  min-width:320px;
+}
+.el-message--error .el-message__closeBtn{
+  color:#fa5555!important;
+}
+.el-message--success .el-message__closeBtn{
+  color: #67c23a!important;
+}
+.el-message--warning .el-message__closeBtn{
+  color: #eb9e05!important;
+}
+/*table  css 修改*/
+.el-table th>.cell{
+ /* min-width:60px !important;
+  white-space: nowrap!important;
+  max-width: 300px!important;*/
+}
+.el-radio+.el-radio {
+  margin-left: 15px;
+}
+.el-labelMinw .el-form-item__label{
+  min-width: 40px;
+}
+.ql-editor em,.ql-editor i{
+  font-style: italic;
+}
+.el-winpMin{
+  width: 85px!important;
+}
+.el-DateMin{
+  width:90px!important;
+}
+.el-DateTime{
+   width: 192px!important;
+ }
+.el-Date{
+  width: 146px!important;
+}
+.el-winp{
+ width: 168px!important;
+}
+.el-winps{
+  width: 193px!important;
+}
+.el-winpc{
+  width: 193px!important;
+}
+.el-winpl{
+  width: 437px!important;
+}
+.el-winpls{
+  width: 485px!important;
+}
+.el-winpTl{
+  width: 722px!important;
+}
+.el-minh{
+  min-height:80px!important;
+}
+.el-minh .el-textarea__inner{
+  min-height:80px!important;
+}
+.el-maxh{
+  min-height:120px!important;
+}
+.el-maxh .el-textarea__inner{
+  min-height:120px!important;
+  color: #2c3e50!important;
+  font-size:16px ;
+  padding:12px 15px;
+}
+
+.el-form-item__label{
+  min-width:60px;
+}
+.btn-default, .btn-default:focus, .btn-default:hover, .btn-default:active {
+  background-color: #abbac3!important;
+  border-color: #abbac3!important;
+  color:#fff!important;
+}
+.el-btnw{
+  min-width:70px;
+}
+.el-inline{ display: inline-block}
+
+/*---font size  style  css---*/
+.el-blue{
+  color: #409eff!important;
+}
+.el-green{
+  color: #69aa46!important;
+}
+.el-red{
+  color: #dd5a43!important;
+}
+.el-grey{
+  color: #777!important;
+}
+.el-purple {
+  color: #a069c3!important;
+}
+.el-bgRed{
+  background:#dd5a43!important;
+}
+.el-bgGey{
+  background:#777!important;
+}
+.el-bgGreen{
+   background:#86b558!important;
+ }
+.el-bgLightGreen{
+  background:#87b87f!important;
+}
+.el-bgBlue{
+  background:#6fb3e0!important;
+}
+.el-bgWin{
+  background:#ffb44b!important;
+}
+.el-bgDanner{
+  background:#F56C6C!important;
+}
+.el-bgDefault{
+  background:#b4c2cc!important;
+}
+.el-bgPurple{
+  background:#9889c1!important;
+}
+.el-fl{
+  float: left;
+}
+.el-fr{
+  float: right;
+}
+.el-ac{
+  text-align: center;
+}
+.el-pad{
+  padding:30px 0 ;
+}
+.el-mart{
+  margin-top:20px ;
+}
+.el-marl{
+  margin-left:20px ;
+}
+.el-marl10{
+  margin-left:10px ;
+}
+.el-marrl10{
+  margin:0 10px ;
+}
+.el-marl210{
+  margin-left:210px ;
+}
+.el-marr{
+  margin-right:10px!important;
+}
+.el-marb20{
+  margin-bottom: 20px ;
+}
+.el-item{
+  display: block;
+}
+.el-alink{
+  display: inline-block;
+  color: #478fca;
+  cursor: pointer;
+}
+.el-disable{
+  color: #999999;
+}
+.el-span{
+  display: inline-block;
+  height:36px ;
+  line-height:36px ;
+  margin: 0 10px;
+  font-size: 13px;
+}
+.el-cursor{
+   cursor: pointer;
+}
+.el-point{
+  display: inline-block;
+  vertical-align: top;
+  height:36px ;
+  line-height:36px ;
+  margin: 0 10px;
+  color:#999;
+  font-size:13px ;
+}
+.el-tip{
+  display: inline-block;
+  vertical-align: top;
+  height:40px ;
+  line-height:40px ;
+  color: #f06e57;
+  font-size:12px ;
+}
+.el-card-title{
+  line-height: 28px;
+  margin-bottom: 28px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #CCC;
+  font-size:17px ;
+  color:#478fca;
+  font-weight: lighter;
+  border-bottom-color: #d5e3ef;
+  text-indent:15px ;
+}
+.el-editor{
+  width:722px;
+
+}
+
+.el-editor .ql-editor{
+  min-height:120px ;
+}
+.el-clear:after {
+  clear:both;
+  content:'.';
+  display:block;
+  width: 0;
+  height: 0;
+  visibility:hidden;
+}
+.el-tabs{
+  padding: 0px 30px 28px 30px;
+}
+.ln-bankList .el-checkbox__label{
+  min-width: 120px;
+  text-align: left;
+  text-indent: 5px;
+}
+/*---table  style  css---*/
+
+/*-----------------Created  by wxl------------------*/
+/*---------common fontsize---------*/
+.ln-bold{ font-weight: bold}
+.ln-al{ text-align: left}
+.ln-ar{ text-align: right}
+.ln-ac{ text-align: center}
+.ln-fl{ float: left}
+.ln-fr{ float: right}
+/*---------common color and bg---------*/
+.ln-white{color:#fff}
+.ln-block1{ color:#111111}
+.ln-gey{ color:#999}
+.ln-geyd7{ color:#d7d7d7}
+.ln-yellow{ color:#fd7308}
+.ln-bggey{ background-color:#f5f5f5}
+.ln-bgwhite{ background-color:#ffffff}
+.el-relative{
+  position: relative;
+}
+.el-file-input{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+/*tab */
+.el-tab-pane{
+  min-height: 300px!important;
+  max-height: 300px!important;
+}
