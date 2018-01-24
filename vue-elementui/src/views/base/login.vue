@@ -32,8 +32,8 @@
             return {
                 fullscreenLoading: false,
                 loginForm: {
-                    username: '',
-                    password: ''
+                    username: 'admin',
+                    password: '123456'
                 },
                 rules: {
                     username: [
@@ -60,33 +60,33 @@
           //获取用户权限
           submitForm(formName){
             const self = this;
-            const dataUrl= login+'/fin-ospsso-rest/auth/login.htm';
+           /* const dataUrl= login+'/fin-ospsso-rest/auth/login.htm';*/
             var passwordmd5 =Md5(self.loginForm.password);//md5加密
-            const data={
+           /* const data={
               'username':self.loginForm.username,
               'password':passwordmd5
-            };
+            };*/
             self.$refs[formName].validate((valid) => {
               if (valid) {
-                const params={'data':data,'transactionUuid':self.uuid()}
+               /* const params={'data':data,'transactionUuid':self.uuid()}
                   self.$http.post(dataUrl, params).then((response)=>{
-                    if(response.data.code === 'S0A00000'){
+                    if(response.data.code === 'S0A00000'){*/
                       localStorage.setItem('ms_username',self.loginForm.username);
                       self.fullscreenLoading = true;
-                      //登录状态1天后过期
+                    /*  //登录状态1天后过期
                       let expireDays = 1000 * 60 * 60 * 24 * 1;
                       self.setCookie('token', response.data.data.token, expireDays);
-                      setTimeout(()=>{
+                      setTimeout(()=>{*/
                         self.$store.state.isLoging = true;
                         self.fullscreenLoading = false;//加载状态
                         //登录成功后默认是
                         self.$router.push('/home/main');
-                      },3000)
+                   /*   },3000)
                     }else{
                       self.$message({showClose: true,duration:2000,type: 'error',message:response.data.msg});
                       return false;
                     }
-                   })
+                   })*/
                 }else {
                 self.$message({showClose: true,duration:2000,type: 'error',message:response.data.msg});
                 return false;
