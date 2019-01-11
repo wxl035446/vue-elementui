@@ -55,16 +55,6 @@ Vue.prototype.uuid = function(){
   return uuid.join('');
 }
 
-global.merchantPostLink = ''
-global.accountPostLink =  ''
-global.couponPostLink=''
-global.incidentMarket = ''
-global.bankPostLink=''
-global.discountPostLink = ''
-global.billLink = ''
-global.walletUser = ''
-global.login = ''
-global.payTrade = ''
 if(process.env.NODE_ENV == 'development'){
   global.login = 'http://10.0.53.110:7089'
 }
